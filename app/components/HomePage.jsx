@@ -8,6 +8,10 @@ const HomePage = () => {
     const [pageSelected, setpageSelected] = useState("home")
     const [difficulty, setdifficulty] = useState("Easy")
 
+    const handleCloseClick = () => {
+        window.close();
+    };
+
     return (
         <div className={styles.main}>
             {
@@ -19,7 +23,7 @@ const HomePage = () => {
                     <div className={styles.options}>
                         <button onClick={() => { setpageSelected("game") }}>Start Game</button>
                         <button onClick={() => { setpageSelected("settings") }}>Settings</button>
-                        <button>Quit</button>
+                        <button onClick={handleCloseClick}>Quit</button>
                     </div>
                 </> : pageSelected == "settings" ?
                     <Settings setpageSelected={setpageSelected} setdifficulty={setdifficulty} />
